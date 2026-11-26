@@ -4,7 +4,7 @@
   // Load game stylesheet
   const stylesheet = document.createElement("link");
   stylesheet.rel = "stylesheet";
-  stylesheet.href = "css/easter-egg.css";
+  stylesheet.href = "CSS/easter-egg.css";
   document.head.appendChild(stylesheet);
 
   // Create game interface
