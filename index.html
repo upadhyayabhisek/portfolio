@@ -1,273 +1,502 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Abhisek Upadhyay is a developer from Nepal, studying Information Technology at Kantipur City College. Hire a skilled developer to build impactful projects.">
-    <meta name="keywords"
-        content="Abhisek Upadhyay, Abhisek developer, developer Nepal, Abhisek Kantipur City College, hire developer Nepal, IT student, web developer">
-    <meta name="author" content="Abhisek Upadhyay">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Abhisek Upadhyay - Developer">
-    <meta property="og:description"
-        content="Abhisek Upadhyay is a developer with skills in full-stack development. Hire a skilled developer for impactful projects.">
-    <meta property="og:image" content="URL_to_image_here">
-    <meta property="og:url" content="URL_to_your_website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Abhisek Upadhyay - Developer">
-    <meta name="twitter:description"
-        content="Abhisek Upadhyay is a developer with a passion for creating impactful websites and applications.">
-    <meta name="twitter:image" content="URL_to_image_here">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="shortcut icon" href="images_main/favicon.png" type="image/x-icon">
-    <title>Abhisek Upadhyay - Developer, Web Developer, IT Student | Hire Developer Nepal</title>
-    <link rel="icon" href="images_main/favicon.png" type="image/png">
-</head>
+    <meta
+      name="description"
+      content="Abhisek Upadhyay — Software Developer building thoughtful digital experiences."
+    />
+    <meta name="author" content="Abhisek Upadhyay" />
 
-<body>
-    <div class="container">
-        <nav id="header">
-            <div class="nav-logo">
-                <p class="nav-name">Abhisek</p>
-            </div>
-            <div class="nav-menu" id="myNavMenu">
-                <ul class="nav_menu_list">
-                    <li class="nav_list">
-                        <a href="#home" class="nav-link active-link">Home</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="#about" class="nav-link">About</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="#projects" class="nav-link">Projects</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="#contact" class="nav-link">Contact</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="blog.html" class="nav-link" target="_blank" style="transition: color 0.3s;"
-                            onmouseover="this.style.color='purple'" onmouseout="this.style.color=''">Blog</a>
-                    </li>
+    <title>Abhisek Upadhyay — Software Developer</title>
 
-                </ul>
-            </div>
-            <div class="nav-button">
-                <a href="assets/resume.pdf" download>
-                    <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
-                </a>
-            </div>
-            <div class="nav-menu-btn">
-                <i class="uil uil-bars" onclick="myMenuFunction()"></i>
-            </div>
-        </nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-        <main class="wrapper">
-            <section class="featured-box" id="home">
-                <div class="featured-text">
-                    <div class="featured-text-card">
-                        <span>Abhisek Upadhyay</span>
-                    </div>
-                    <div class="featured-name">
-                        <p>I'm <span class="typedText"></span></p>
-                    </div>
-                    <div class="featured-text-info">
-                        <p>Welcome! I'm a passionate developer focused on creating impactful and user-friendly solutions
-                        </p>
-                    </div>
-                    <div class="featured-text-btn">
-                        <a
-                            href="mailto:g38099933.com?subject=Hiring%20Inquiry&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20hiring%20you.%20Please%20get%20back%20to%20me.%0D%0A%0D%0AThank%20you!">
-                            <button class="btn blue-btn">Hire Me</button>
-                        </a>
-                    </div>
-                    <div class="social_icons">
-                        <a href="https://twitter.com/abhisekup" target="_blank">
-                            <div class="icon"><i class="uil uil-twitter"></i></div>
-                        </a>
-                        <a href="https://github.com/upadhyayabhisek" target="_blank">
-                            <div class="icon"><i class="uil uil-github-alt"></i></div>
-                        </a>
-                        <a href="https://linkedin.com/in/abhisekupadhyay" target="_blank">
-                            <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
-                        </a>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-                    </div>
-                </div>
-                <div class="featured-image">
-                    <div class="image">
-                        <img src="images_main/avatar.png" alt="Abhisek Upadhyay">
-                    </div>
-                </div>
-                <div class="scroll-icon-box">
-                    <a href="#about" class="scroll-btn">
-                        <i class="uil uil-mouse-alt"></i>
-                        <p>Scroll Down</p>
-                    </a>
-                </div>
+    <link rel="stylesheet" href="css/styles.css" />
 
-            </section>
-            <section class="section" id="about">
-                <div class="top-header">
-                    <h1>About Me</h1>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="about-info">
-                            <h3>Who am i?</h3>
-                            <p>I am a Bachelor’s student in Information Technology (BIT) at Kantipur City College,
-                                currently in my Final year. Throughout my studies, I have developed a strong
-                                foundation in programming, software development, and database management. I have
-                                successfully completed several projects that have sharpened my skills as an aspiring
-                                developer.
-                                As I advance in my studies, I am eager to apply my knowledge to real-world projects. If
-                                you have any internship opportunities or would like to discuss how my background aligns
-                                with your needs, feel free to get in touch.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="skills-box">
-                            <div class="skills-header">
-                                <h3>Frontend</h3>
-                            </div>
-                            <div class="skills-list">
-                                <span>HTML</span>
-                                <span>CSS Tailwind</span>
-                                <span>JavaScript</span>
-                            </div>
-                        </div>
-                        <div class="skills-box">
-                            <div class="skills-header">
-                                <h3>Backend</h3>
-                            </div>
-                            <div class="skills-list">
-                                <span>PHP Laravel</span>
-                                <span> Java Spring</span>
-                                <span>Python Flask</span>
-                                <span>C++</span>
-                                <span>C</span>
-                            </div>
-                        </div>
-                        <div class="skills-box">
-                            <div class="skills-header">
-                                <h3>Other Skills</h3>
-                            </div>
-                            <div class="skills-list">
-                                <span>Canva</span>
-                                <span>Figma</span>
-                                <span>MySQL</span>
-                                <span>GIT</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  </head>
 
-
-            <section class="section" id="projects">
-                <div class="top-header">
-                    <h1>Projects</h1>
-                </div>
-                <div class="project-container">
-                    <div class="project-box">
-                        <i class="uil uil-briefcase-alt"></i>
-                        <h3>Completed</h3>
-                        <label>6+ Finished Projects</label>
-                    </div>
-                    <div class="project-box">
-                        <i class="uil uil-users-alt"></i>
-                        <h3>Projects</h3>
-                        <label>
-                            <ul>
-                                <li><a href="https://github.com" target="_blank">Payroll System</a></li>
-                                <li><a href="https://github.com" target="_blank">Full Stack Freelancing Website</a>
-                                </li>
-                                <li><a href="https://github.com" target="_blank">Helicopter Game</a></li>
-                                <li><a href="https://github.com" target="_blank">Medical Diagnosis System</a></li>
-                            </ul>
-                        </label>
-                    </div>
-                    <div class="project-box">
-                        <i class="uil uil-award"></i>
-                        <h3>Experience</h3>
-                        <label>Projects in varying topics!</label>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="section" id="contact">
-                <div class="top-header">
-                    <h1>Get in touch</h1>
-                    <span>For any queries or offers, contact me here!</span>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="contact-info">
-                            <h2>Contact Me <i class="uil uil-corner-right-down"></i></h2>
-                            <p><i class="uil uil-envelope"></i>Email: g3809993@gmail.com
-                            </p>
-                            <p>Kathmandu, Nepal</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                            <input type="hidden" name="access_key" value="-" />
-                            <div class="form-control">
-                                <div class="form-inputs">
-                                    <input type="text" id="name" name="name" class="input-field" placeholder="Name"
-                                        style="color: white;">
-                                    <input type="email" id="email" name="email" class="input-field" placeholder="Email"
-                                        style="color: white;">
-                                </div>
-                                <div class="text-area">
-                                    <textarea name="message" id="message" placeholder="Message"
-                                        style="color: white;"></textarea>
-                                </div>
-                                <div class="form-button">
-                                    <input type="submit" value="Send" class="btn"><i class="uil uil-message"></i>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-        <footer>
-            <div class="top-footer">
-                <p>Let's Connect!</p>
-            </div>
-            <div class="footer-social-icons">
-                <a href="https://twitter.com/abhisekup" target="_blank">
-                    <div class="icon"><i class="uil uil-twitter"></i></div>
-                </a>
-                <a href="https://github.com/upadhyayabhisek" target="_blank">
-                    <div class="icon"><i class="uil uil-github-alt"></i></div>
-                </a>
-                <a href="https://linkedin.com/in/abhisekupadhyay" target="_blank">
-                    <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
-                </a>
-            </div>
-            <div class="bottom-footer">
-                <p>&copy; <a href="#home" style="text-decoration: none;">Abhisek Upadhyay 2025</a> - All rights reserved
-                </p>
-            </div>
-        </footer>
-
+  <body>
+    <div class="loader" id="loader">
+      <div class="loader-content">
+        <span>Abhisek's Page.</span>
+        <div class="loader-line">
+          <div class="loader-progress"></div>
+        </div>
+        <p>Welcome.</p>
+      </div>
     </div>
 
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="JS/script.js"></script>
-</body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+      <a href="#home" class="logo">AU<span>.</span></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i data-lucide="sun" class="theme-icon"></i>
+        </button>
+
+        <a href="#" class="resume-btn" download>
+          Resume <i data-lucide="arrow-up-right"></i>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO / 01 -->
+
+      <section class="hero section-padding" id="home">
+        <div class="hero-top">
+          <span class="hero-location">
+            KATHMANDU, NEPAL <span id="localTime"></span>
+          </span>
+        </div>
+
+        <div class="hero-main">
+          <div class="hero-heading">
+            <p class="hero-intro">HELLO, I'M ABHISEK.</p>
+
+            <h1>
+              I BUILD<br />
+              <span class="outline-text">DIGITAL</span><br />
+              EXPERIENCES<span class="accent">.</span>
+            </h1>
+
+            <div class="hero-bottom">
+              <p>
+                Junior Web Developer specializing in Laravel, PHP and
+                JavaScript. Building scalable applications, clean APIs and
+                meaningful digital experiences.
+              </p>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="turntable">
+              <div class="turntable-top">
+                <div class="turntable-brand">
+                  <span>79</span>
+                  <span>DIRECT DRIVE / 001</span>
+                </div>
+
+                <div class="record-stage">
+                  <div class="vinyl-record is-playing" id="vinylRecord">
+                    <div class="vinyl-grooves"></div>
+
+                    <div class="vinyl-label">
+                      <span class="vinyl-label-top">79 Records</span>
+                      <span class="vinyl-label-symbol">[79]</span>
+                      <span class="vinyl-label-bottom">SIDE A / 2026</span>
+                    </div>
+
+                    <div class="record-hole"></div>
+                  </div>
+                </div>
+
+                <div class="turntable-controls">
+                  <div class="track-info">
+                    <span class="track-status">
+                      <span id="recordStatus">NOW PLAYING</span>
+                    </span>
+
+                    <h3 class="track-title">Always<br />Building</h3>
+                    <p>ABHISEK — SIDE A</p>
+                  </div>
+
+                  <button
+                    class="record-control"
+                    id="recordToggle"
+                    aria-label="Pause record"
+                  >
+                    <i data-lucide="pause"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="turntable-bottom">
+                <span>33⅓ RPM</span>
+                <span>DRAG TO SCRATCH ↔</span>
+                <span>STEREO / 2026</span>
+              </div>
+            </div>
+
+            <div class="visual-caption">
+              <span>CREATIVE MIND.</span>
+              <span>TECHNICAL HANDS.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARQUEE -->
+
+      <div class="marquee">
+        <div class="marquee-track">
+          <span>
+            FULL-STACK DEVELOPMENT <b>✳</b> LARAVEL & PHP <b>✳</b> JAVASCRIPT
+            ECOSYSTEM <b>✳</b> API ARCHITECTURE <b>✳</b> MACHINE LEARNING
+            <b>✳</b> BUILT WITH PURPOSE <b>✳</b>
+          </span>
+
+          <span aria-hidden="true">
+            FULL-STACK DEVELOPMENT <b>✳</b> LARAVEL & PHP <b>✳</b> JAVASCRIPT
+            ECOSYSTEM <b>✳</b> API ARCHITECTURE <b>✳</b> MACHINE LEARNING
+            <b>✳</b> BUILT WITH PURPOSE <b>✳</b>
+          </span>
+        </div>
+      </div>
+
+      <!-- ABOUT / 02 -->
+
+      <section class="about section-padding" id="about">
+        <div class="section-label">
+          <span>02 — ABOUT ME</span>
+          <span>A LITTLE INTRODUCTION</span>
+        </div>
+
+        <div class="about-content">
+          <h2 class="reveal-text">
+            I believe great software isn't just about writing or generating
+            code. It's about solving problems and creating
+            <span>meaningful experiences.</span>
+          </h2>
+
+          <div class="about-bottom">
+            <div class="about-image">
+              <img src="assets/images/profile.jpg" alt="Abhisek Upadhyay" />
+            </div>
+
+            <div class="about-description">
+              <p>
+                I'm Abhisek Upadhyay, a software developer from Nepal. I enjoy
+                turning ideas into functional digital products, exploring new
+                technologies and solving challenging problems.
+              </p>
+
+              <p>
+                With a background in Information Technology, I bring together
+                development, creativity and curiosity to build things that
+                matter.
+              </p>
+
+              <a href="#contact" class="text-link">
+                LET'S TALK <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE / 03 -->
+
+      <section class="experience section-padding" id="experience">
+        <div class="section-label">
+          <span>03 — EXPERIENCE</span>
+          <span>WHERE I'VE WORKED</span>
+        </div>
+
+        <div class="experience-heading">
+          <h2>PROFESSIONAL<br /><span>JOURNEY.</span></h2>
+          <p>Turning technical knowledge into real-world applications.</p>
+        </div>
+
+        <div class="experience-list">
+          <article class="experience-item">
+            <div class="experience-date">
+              <span>NOV 2025 — JUN 2026</span>
+              <span>01 / FULL-TIME</span>
+            </div>
+
+            <div class="experience-content">
+              <h3>Junior Web Developer</h3>
+              <h4>Rasello Nepal</h4>
+
+              <p>
+                Developed enterprise-level web applications and public-sector
+                infrastructure, contributing to the Civil Aviation Authority of
+                Nepal portal.
+              </p>
+
+              <ul>
+                <li>
+                  Converted Figma designs into responsive interfaces using
+                  October CMS.
+                </li>
+                <li>
+                  Developed custom CMS plugins with role-based permissions.
+                </li>
+                <li>
+                  Built a centralized flight movement tracker for domestic and
+                  international airports.
+                </li>
+                <li>
+                  Extended RainLab.Pages and static menu plugins with custom
+                  metadata.
+                </li>
+              </ul>
+
+              <div class="experience-tags">
+                <span>OCTOBER CMS</span>
+                <span>PHP</span>
+                <span>JAVASCRIPT</span>
+                <span>API DEVELOPMENT</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-date">
+              <span>JUN 2025 — SEP 2025</span>
+              <span>02 / INTERNSHIP</span>
+            </div>
+
+            <div class="experience-content">
+              <h3>Web Development Intern</h3>
+              <h4>Rasello Nepal</h4>
+
+              <p>
+                Worked on backend architecture, REST APIs, authentication and
+                modular dashboard development.
+              </p>
+
+              <ul>
+                <li>
+                  Migrated legacy databases using structured Laravel migrations.
+                </li>
+                <li>
+                  Applied Repository and Service patterns for cleaner
+                  architecture.
+                </li>
+                <li>Developed RESTful APIs using Laravel Resources.</li>
+                <li>Integrated JWT authentication and LINE API.</li>
+                <li>
+                  Built dynamic dashboard panels using Nuxt UI Pro and Vue.js.
+                </li>
+              </ul>
+
+              <div class="experience-tags">
+                <span>LARAVEL</span>
+                <span>VUE.JS</span>
+                <span>NUXT</span>
+                <span>MYSQL</span>
+                <span>JWT</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-page">
+          <span>EXPERIENCE — RASELLO NEPAL</span>
+        </div>
+      </section>
+
+      <!-- SELECTED WORK / 04 -->
+
+      <section class="work section-padding" id="work">
+        <div class="section-label">
+          <span>04 — SELECTED WORK</span>
+          <span>THINGS I'VE BUILT</span>
+        </div>
+
+        <div class="work-heading">
+          <h2>SELECTED<br /><span>PROJECTS.</span></h2>
+          <p>A collection of ideas turned into reality.</p>
+        </div>
+
+        <div class="project-list">
+          <article class="project-item">
+            <div class="project-number">01</div>
+
+            <div class="project-preview preview-one">
+              <img src="#" alt="Diagnosys AI medical screening platform" />
+              <span class="preview-overlay">01</span>
+            </div>
+
+            <div class="project-details">
+              <div>
+                <h3>Diagnosys — AI Medical Screening</h3>
+                <p>
+                  An AI-powered health screening platform predicting diabetes,
+                  liver and kidney disease risks using machine learning.
+                </p>
+              </div>
+
+              <div class="project-meta">
+                <span>FULL STACK / MACHINE LEARNING</span>
+                <span>NUXT.JS / FLASK / SCIKIT-LEARN</span>
+              </div>
+            </div>
+
+            <a
+              href="YOUR_DIAGNOSYS_GITHUB_URL"
+              class="project-arrow"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Diagnosys project"
+            >
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </article>
+
+          <article class="project-item">
+            <div class="project-number">02</div>
+
+            <div class="project-preview preview-two">
+              <img src="#" alt="Payroll management desktop application" />
+              <span class="preview-overlay">02</span>
+            </div>
+
+            <div class="project-details">
+              <div>
+                <h3>Payroll Management System</h3>
+                <p>
+                  A Java desktop application automating employee management,
+                  salary calculations, tax processing and payroll reporting.
+                </p>
+              </div>
+
+              <div class="project-meta">
+                <span>DESKTOP APPLICATION</span>
+                <span>JAVA / MYSQL</span>
+              </div>
+            </div>
+
+            <a
+              href="YOUR_PAYROLL_GITHUB_URL"
+              class="project-arrow"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View payroll project"
+            >
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </article>
+        </div>
+
+        <div class="section-page">
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-link"
+          >
+            CURRENTLY WORKING ON ROYALACE
+          </a>
+        </div>
+      </section>
+
+      <!-- EXPERTISE / 05 -->
+
+      <section class="expertise section-padding">
+        <div class="section-label">
+          <span>05 — EXPERTISE</span>
+          <span>MY TOOLKIT</span>
+        </div>
+
+        <h2>THINGS I WORK<br /><span>WITH.</span></h2>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <span>01 / LANGUAGES</span>
+            <h3>PHP · JavaScript · Python · Java</h3>
+            <p>SQL · C · C++ · HTML · CSS</p>
+          </div>
+
+          <div class="skill-group">
+            <span>02 / FRAMEWORKS & CMS</span>
+            <h3>Laravel · Nuxt.js · Vue.js</h3>
+            <p>October CMS · Flask · Filament PHP · Spring Boot</p>
+          </div>
+
+          <div class="skill-group">
+            <span>03 / DATABASES</span>
+            <h3>MySQL · PostgreSQL · SQLite</h3>
+            <p>Database architecture, migrations and optimization.</p>
+          </div>
+
+          <div class="skill-group">
+            <span>04 / TOOLS & LIBRARIES</span>
+            <h3>Git · Postman · Figma</h3>
+            <p>Nuxt UI Pro · Tailwind CSS · Alpine.js</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT / 06 -->
+
+      <section class="contact section-padding" id="contact">
+        <div class="section-label">
+          <span>06 — GET IN TOUCH</span>
+          <span>HAVE AN IDEA?</span>
+        </div>
+
+        <h2>LET'S MAKE<br />SOMETHING <span>GREAT.</span></h2>
+
+        <a href="mailto:g38099933@gmail.com" class="contact-link">
+          g38099933@gmail.com
+          <i data-lucide="arrow-up-right"></i>
+        </a>
+
+        <div class="social-links">
+          <a
+            href="https://github.com/upadhyayabhisek"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GITHUB ↗</a
+          >
+
+          <a
+            href="https://linkedin.com/in/abhisekupadhyay"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LINKEDIN ↗</a
+          >
+
+          <a
+            href="https://twitter.com/abhisekup"
+            target="_blank"
+            rel="noopener noreferrer"
+            >X / TWITTER ↗</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a href="#home" class="logo">AU<span>.</span></a>
+      <p>DESIGNED & DEVELOPED BY ABHISEK UPADHYAY</p>
+      <span>© <span id="year"></span> ALL RIGHTS RESERVED.</span>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/easter-egg.js"></script>
+  </body>
 </html>

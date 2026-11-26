@@ -1,258 +1,388 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Thoughts, research, ideas and technical writing by Abhisek Upadhyay."
+    />
+    <meta name="author" content="Abhisek Upadhyay" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/styles.css"> <!-- Main Styles -->
-    <link rel="stylesheet" href="css/blog.css"> <!-- Blog Specific Styles -->
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-    <title>Blog | Abhisek Upadhyay</title>
-</head>
+    <title>Journal — Abhisek Upadhyay</title>
 
-<body>
-    <div class="container">
-        <nav id="header">
-            <div class="nav-logo">
-                <p class="nav-name">Abhisek Upadhyay</p>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/blog.css" />
+
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="logo">AU<span>.</span></a>
+
+      <nav class="blog-nav">
+        <a href="index.html">HOME</a>
+        <span class="nav-divider">/</span>
+        <span class="nav-current">JOURNAL</span>
+      </nav>
+
+      <a href="index.html#contact" class="resume-btn">
+        LET'S TALK <span>↗</span>
+      </a>
+    </header>
+
+    <main class="journal">
+      <!-- INTRO -->
+      <section class="journal-hero">
+        <div class="section-label">
+          <span>07 — PERSONAL JOURNAL</span>
+          <span>THOUGHTS / IDEAS / RESEARCH</span>
+        </div>
+
+        <div class="journal-hero-content">
+          <div>
+            <p class="journal-eyebrow">A SPACE FOR CURIOSITY.</p>
+            <h1>THOUGHTS<br />& <span>IDEAS.</span></h1>
+          </div>
+
+          <div class="journal-description">
+            <p>
+              A collection of things I've explored, researched, learned and
+              thought about along the way.
+            </p>
+            <span class="journal-index">EST. 2025 — PRESENT</span>
+          </div>
+        </div>
+
+        <div class="journal-bottom">
+          <span>WRITTEN BY ABHISEK UPADHYAY</span>
+          <span>SCROLL TO EXPLORE ↓</span>
+        </div>
+      </section>
+
+      <!-- ARTICLES -->
+      <section class="journal-content">
+        <div class="section-label">
+          <span>01 — THE ARCHIVE</span>
+          <span>SELECTED WRITING</span>
+        </div>
+
+        <article class="journal-article" id="article-egovernance">
+          <div class="article-index">
+            <span>01</span>
+            <span>RESEARCH / E-GOVERNANCE</span>
+          </div>
+
+          <div class="article-main">
+            <div class="article-meta">
+              <span>JUNE 19, 2025</span>
+              <span>ACADEMIC RESEARCH</span>
             </div>
-            <div class="nav-menu">
-                <ul class="nav_menu_list">
-                    <li class="nav_list">
-                        <a href="index.html" class="nav-link">Home</a>
+
+            <h2>
+              e-Governance Challenges
+              <span>in Nepal</span>
+            </h2>
+
+            <p class="article-subtitle">
+              A case study exploring Nepal's digital transformation, government
+              technology initiatives and the challenges of building an
+              interconnected digital nation.
+            </p>
+
+            <div class="article-tldr">
+              <span class="tldr-label">THE SHORT VERSION</span>
+              <p>
+                Nepal's e-Governance initiatives, including Nagarik App,
+                National Identity Card and e-Passport, have improved access to
+                government services. However, integration, digital literacy,
+                data security and physical distribution remain significant
+                challenges.
+              </p>
+            </div>
+
+            <details class="article-details">
+              <summary>
+                <span class="read-label">READ FULL ARTICLE</span>
+                <span class="read-icon">↗</span>
+              </summary>
+
+              <div class="full-post">
+                <div class="article-body">
+                  <p class="article-lead">
+                    Digital transformation is changing how governments deliver
+                    services. But implementing technology is only one part of
+                    the challenge.
+                  </p>
+
+                  <h3>01. Introduction</h3>
+
+                  <h4>1.1 Overview of E-Governance</h4>
+                  <p>
+                    E-Governance refers to the use of internet-based
+                    technologies and digital systems to provide government
+                    services. It aims to improve transparency, efficiency and
+                    citizen engagement while reducing administrative delays and
+                    opportunities for corruption.
+                  </p>
+
+                  <p>
+                    Services such as tax filing, passport applications, license
+                    renewals and payments can be delivered digitally. It also
+                    improves information exchange between government
+                    departments.
+                  </p>
+
+                  <h4>1.2 Case Study Introduction</h4>
+                  <p>
+                    Nepal has implemented multiple e-Governance initiatives
+                    since the early 2000s. This study focuses on three
+                    initiatives: Nagarik App, the National Identity Card and the
+                    e-Passport System.
+                  </p>
+
+                  <h3>02. E-Governance Initiatives in Nepal</h3>
+
+                  <h4>2.1 Nagarik App</h4>
+                  <p>
+                    Nagarik App is a mobile application developed by the
+                    Government of Nepal to provide citizens with easier access
+                    to public services through the internet. Its services
+                    include complaints, bill and tax payments, and digital
+                    document management.
+                  </p>
+
+                  <h4>2.1.1 Impact</h4>
+                  <p>
+                    The application has helped centralize government services
+                    and reduce administrative delays. Services such as PAN
+                    registration and bill payments can be accessed without
+                    visiting multiple government offices.
+                  </p>
+
+                  <h4>2.1.2 Outcomes</h4>
+                  <ul>
+                    <li>Improved transparency in public services.</li>
+                    <li>Reduced delays in government processes.</li>
+                    <li>Improved access to services for citizens.</li>
+                  </ul>
+
+                  <h4>2.1.3 Challenges</h4>
+                  <ul>
+                    <li>Slow adoption among government officials.</li>
+                    <li>
+                      Incomplete service integration during early releases.
                     </li>
-                </ul>
-            </div>
-        </nav>
+                    <li>Limited digital literacy among older citizens.</li>
+                  </ul>
 
-        <main class="wrapper">
-            <section class="blog-posts">
-                <h1>My Thoughts!</h1>
+                  <h4>2.2 National Identity Card Project</h4>
+                  <p>
+                    The National Identity Card Project was initiated by the
+                    Department of National ID and Civil Registration to
+                    establish a biometric identification system for Nepali
+                    citizens.
+                  </p>
 
-                <div class="blog-post">
-                    <h2>1.</h2>
-                    <h2>e-Governance Challenges in Nepal Case Study</h2>
-                    <p class="post-date">June 19, 2025</p>
-                    <p class="post-excerpt">
-                        <span class="tldr">TLDR:</span> Nepal’s e-Governance initiatives, like the Nagarik App, National
-                        Identity Card, and e-Passport system, have faced challenges related to integration, digital
-                        literacy, security, and physical distribution, despite improving government efficiency and
-                        transparency.
-                    </p>
-                    <a href="#!" class="read-more">Read More</a>
-                    <div class="full-post">
-                        <p>
-                            <strong>1. Introduction</strong><br>
-                            <strong>1.1 Overview of E-Governance</strong><br>
-                            E-Governance refers to the process of using the internet and digital technologies to provide
-                            services offered by the government. This allows us to improve transparency within the
-                            government and the efficiency of services provided by the government. It encourages citizen
-                            engagement while also helping to reduce corruption within the government departments. It
-                            also allows for services such as tax filing, passport and license applications, as well as
-                            renewals, to be made through the internet. It improves data transfer between government
-                            departments.<br><br>
+                  <h4>2.2.1 Impact</h4>
+                  <p>
+                    The biometric identity system supports digital
+                    identification across government and private services. It
+                    can help improve data consistency for banking, social
+                    security, passport registration and other
+                    identification-based services.
+                  </p>
 
-                            <strong>1.2 Case Studies Introduction</strong><br>
-                            Nepal has implemented multiple E-Governance initiatives since the early 2000s. The
-                            E-Governance initiatives which have been chosen for this study include Nagarik App, National
-                            Identity Card, and ePassport System, which were launched through the Digital Nepal Framework
-                            act in 2019. By examining the impact and outcomes of these initiatives, as well as the
-                            challenges faced by them, we can gain insights into the process of E-Governance as well as
-                            learn
-                            about the Digitalization of Nepal.<br><br>
+                  <h4>2.2.2 Outcomes</h4>
+                  <ul>
+                    <li>More consistent citizen identification.</li>
+                    <li>Improved verification and service security.</li>
+                    <li>
+                      Reduced reliance on separate identification records.
+                    </li>
+                  </ul>
 
-                            <strong>2. Case Studies Initiative Implemented in Nepal</strong><br>
+                  <h4>2.2.3 Challenges</h4>
+                  <ul>
+                    <li>Delays in physical card distribution.</li>
+                    <li>Concerns regarding personal data security.</li>
+                    <li>
+                      Difficulty completing digital forms for some citizens.
+                    </li>
+                    <li>
+                      Access barriers when services depend on National ID
+                      availability.
+                    </li>
+                  </ul>
 
-                            <strong>2.1 Nagarik App</strong><br>
-                            The Nagarik App is a mobile application developed by the Nepal Government. This app was
-                            created to provide a simpler and easier way to deliver government services to citizens
-                            through the internet. Multiple services are offered through the app, including complaints,
-                            bill
-                            and tax payments, and documentation management.<br><br>
+                  <h4>2.3 e-Passport System</h4>
+                  <p>
+                    Nepal introduced its e-Passport system in 2021. It uses
+                    biometric information and an electronic chip to improve
+                    document security and meet international passport standards.
+                  </p>
 
-                            <strong>2.1.1 Impact</strong><br>
-                            Nagarik App has enhanced government services through digitizing and centralizing services.
-                            It
-                            has also helped remove delays and improve efficiency. For services such as PAN card
-                            registration,
-                            bill payments, etc., which used to take multiple hours and long queues, can now be done
-                            within
-                            a few hours. Nagarik App has also helped increase public trust and awareness about
-                            government
-                            services.<br><br>
+                  <h4>2.3.1 Impact</h4>
+                  <p>
+                    Electronic passports improve document verification and help
+                    reduce the risk of identity fraud. They also support more
+                    efficient immigration processing and modern border
+                    management.
+                  </p>
 
-                            <strong>2.1.2 Outcome</strong><br>
-                        <ul>
-                            <li>It helps reduce corruption due to increased transparency.</li>
-                            <li>Provides access to government services for people in rural areas.</li>
-                            <li>Allows for reduced delays in public services.</li>
-                        </ul><br>
+                  <h4>2.3.2 Outcomes</h4>
+                  <ul>
+                    <li>Modernization of Nepal's travel documents.</li>
+                    <li>Improved document security through biometrics.</li>
+                    <li>More standardized passport processing.</li>
+                  </ul>
 
-                        <strong>2.1.3 Challenges Faced</strong><br>
-                        <ul>
-                            <li>Government workers and officials have been slow to embrace this change.</li>
-                            <li>Services weren’t fully integrated at the launch of the app, resulting in concerns about
-                                security.</li>
-                            <li>Older citizens with limited technological knowledge were not able to utilize it.</li>
-                        </ul><br>
+                  <h4>2.3.3 Challenges</h4>
+                  <ul>
+                    <li>Concerns surrounding personal data security.</li>
+                    <li>Procurement transparency concerns.</li>
+                    <li>Distribution and operational challenges.</li>
+                  </ul>
 
-                        <strong>2.2 National Identity Card Project</strong><br>
-                        The National Identity Card Project was started by DoNIDCR to create a biometric-based
-                        identification system for all Nepali citizens. It was started to improve digital governance
-                        and security.<br><br>
+                  <h3>03. Comparative Analysis</h3>
 
-                        <strong>2.2.1 Impact</strong><br>
-                        The National Identity Card Project has allowed Nepal to push forward towards digitization. By
-                        having a biometric identity card, it replaces traditional documents such as the citizenship
-                        card.
-                        This allows the same document to be used for all services that require government
-                        identification, such as banking, social security, SIM card registration, passport registration,
-                        etc. This process also ensures that the data provided for services is accurate.<br><br>
+                  <h4>3.1 Nepal and Bangladesh — Digital Bangladesh</h4>
 
-                        <strong>2.2.2 Outcome</strong><br>
-                        <ul>
-                            <li>It allows for providing services securely and efficiently.</li>
-                            <li>It prevents fake documents from being used to gain access to certain services.</li>
-                            <li>Ensures the same data is used for all services, such as banking, land registration, etc.
-                            </li>
-                        </ul><br>
+                  <p><strong>Where Nepal performed better:</strong></p>
+                  <ul>
+                    <li>
+                      A centralized mobile application for government services.
+                    </li>
+                    <li>Greater emphasis on centralized service delivery.</li>
+                  </ul>
 
-                        <strong>2.2.3 Challenges Faced</strong><br>
-                        <ul>
-                            <li>Physical distribution of the card is still lacking.</li>
-                            <li>Concerns over the security of collected data.</li>
-                            <li>People with limited computer knowledge find it hard to fill out digital forms.</li>
-                            <li>Due to its mandatory status, citizens find it hard to get social services.</li>
-                        </ul><br>
+                  <p><strong>Where Bangladesh performed better:</strong></p>
+                  <ul>
+                    <li>A broader ecosystem of digital public services.</li>
+                    <li>More extensive service coverage across sectors.</li>
+                  </ul>
 
-                        <strong>2.3 e-Passport System</strong><br>
-                        The e-Passport System was started in 2021 by the Department of Passports to help modernize and
-                        digitize the country’s passports. The e-Passport System uses biometric data and an electronic
-                        chip
-                        to ensure security and meet international passport standards.<br><br>
+                  <h4>3.2 Nepal and Sri Lanka — e-Passport</h4>
 
-                        <strong>2.3.1 Impact</strong><br>
-                        The e-Passport System has allowed Nepal to achieve a secure travel document that meets
-                        international standards. As e-Passports have biometric chips, it reduces the chances of people
-                        using fake passports or committing identity fraud. This also allows for faster immigration
-                        processing and more efficient border control. Since the National ID is required for the
-                        e-Passport,
-                        the same data is used in multiple departments.<br><br>
+                  <p><strong>Where Nepal performed better:</strong></p>
+                  <ul>
+                    <li>A centralized application and tracking process.</li>
+                    <li>Improvements in application management.</li>
+                  </ul>
 
-                        <strong>2.3.2 Outcome</strong><br>
-                        <ul>
-                            <li>Modernization of the country’s passport.</li>
-                            <li>Improved security with biometric documents.</li>
-                            <li>Increased efficiency in processing and printing passports.</li>
-                        </ul><br>
+                  <p><strong>Where Sri Lanka performed better:</strong></p>
+                  <ul>
+                    <li>Greater emphasis on procurement transparency.</li>
+                  </ul>
 
-                        <strong>2.3.3 Challenges Faced</strong><br>
-                        <ul>
-                            <li>Concerns over data security.</li>
-                            <li>Lack of transparency regarding procurement.</li>
-                            <li>NPR 2 billion was lost due to wrong passport distribution.</li>
-                        </ul><br>
+                  <h4>3.3 Nepal and Cambodia — National ID</h4>
 
-                        <strong>3. Comparative Analysis</strong><br>
+                  <p><strong>Where Nepal performed better:</strong></p>
+                  <ul>
+                    <li>
+                      Integration of digital identity into public services.
+                    </li>
+                    <li>Digital identity access through the Nagarik App.</li>
+                  </ul>
 
-                        <strong>3.1 Comparative Analysis with Bangladesh (Digital Bangladesh)</strong><br>
+                  <p><strong>Where Cambodia performed better:</strong></p>
+                  <ul>
+                    <li>Faster nationwide physical card distribution.</li>
+                    <li>Multilingual registration support.</li>
+                  </ul>
 
-                        <strong>3.1.1 What Nepal Did Better</strong><br>
-                        <ul>
-                            <li>Centralized mobile app with over 50 services.</li>
-                            <li>Data privacy by avoiding third-party developers.</li>
-                        </ul><br>
+                  <h3>04. Recommendations for Improvement</h3>
 
-                        <strong>3.1.2 What Bangladesh Did Better</strong><br>
-                        <ul>
-                            <li>Developed a more large-scale services system.</li>
-                            <li>Over 150 services offered, including health, education, land, etc.</li>
-                        </ul><br>
+                  <p>
+                    Nepal's digital governance initiatives have considerable
+                    potential. To make them more effective and inclusive,
+                    several improvements are necessary:
+                  </p>
 
-                        <strong>3.2 Comparative Analysis with Sri Lanka (e-Passport)</strong><br>
+                  <ul>
+                    <li>Provide digital awareness and training programs.</li>
+                    <li>Support commonly used languages in Nepal.</li>
+                    <li>Improve transparency in government procurement.</li>
+                    <li>Prioritize public data security and privacy.</li>
+                    <li>
+                      Encourage collaboration between local and international
+                      technology companies.
+                    </li>
+                    <li>Improve internet infrastructure in remote regions.</li>
+                    <li>
+                      Provide government officials with technical training.
+                    </li>
+                  </ul>
 
-                        <strong>3.2.1 What Nepal Did Better</strong><br>
-                        <ul>
-                            <li>Used a centralized application and tracking system.</li>
-                            <li>Faster processing and passport delivery time.</li>
-                        </ul><br>
+                  <h3>05. Final Thoughts</h3>
 
-                        <strong>3.2.2 What Sri Lanka Did Better</strong><br>
-                        <ul>
-                            <li>Transparency with the procurement process.</li>
-                        </ul><br>
+                  <p>
+                    Digital governance is not simply about moving government
+                    services online. It is about making those services
+                    accessible, secure, reliable and useful to everyone.
+                  </p>
 
-                        <strong>3.3 Comparative Analysis with Cambodia (National ID)</strong><br>
-
-                        <strong>3.3.1 What Nepal Did Better</strong><br>
-                        <ul>
-                            <li>Made the National ID mandatory for all services offered.</li>
-                            <li>Digital ID rollout before physical ID through the Nagarik App.</li>
-                        </ul><br>
-
-                        <strong>3.3.2 What Cambodia Did Better</strong><br>
-                        <ul>
-                            <li>Faster nationwide physical card rollout.</li>
-                            <li>Multi-language support for the registration form.</li>
-                        </ul><br>
-
-                        <strong>4. Recommendations for Improvement</strong><br>
-                        <ul>
-                            <li>Awareness and training programs should be provided to people with limited technical
-                                knowledge.</li>
-                            <li>The application process should support multiple commonly used languages in Nepal.</li>
-                            <li>There should be transparency during the procurement process.</li>
-                            <li>Public data security should be prioritized.</li>
-                            <li>Allow local companies to work with foreign investors and companies to provide services
-                                locally.</li>
-                            <li>Remote areas should be provided with proper internet infrastructure.</li>
-                            <li>Officials should receive proper training and guidance to work with these systems.</li>
-                        </ul><br>
-                        </p>
-                    </div>
+                  <p>
+                    Nepal has made meaningful progress, but successful digital
+                    transformation requires better integration, stronger
+                    infrastructure, public trust and continued investment in
+                    digital literacy.
+                  </p>
                 </div>
 
-
-                <div class="blog-post">
-                    <h2>New Post</h2>
-                    <p class="post-date">June 19, 2025</p>
-                    <p class="post-excerpt">
-                        <span class="tldr">TLDR:</span> TLDR written
-                    </p>
-                    <a href="#!" class="read-more">Read More</a>
-                    <div class="full-post">
-                        full post
-                    </div>
+                <div class="article-end">
+                  <span>END OF ARTICLE</span>
+                  <span>ABHISEK UPADHYAY / 2025</span>
                 </div>
+              </div>
+            </details>
+          </div>
+        </article>
+      </section>
 
+      <section class="journal-cta">
+        <span>HAVE SOMETHING TO DISCUSS?</span>
+        <h2>LET'S START<br /><span>A CONVERSATION.</span></h2>
+        <a href="index.html#contact" class="journal-contact">
+          GET IN TOUCH ↗
+        </a>
+      </section>
+    </main>
 
-
-
-
-            </section>
-        </main>
-
-        <footer>
-
-            <div class="bottom-footer">
-                <p>&copy; <a href="blog.html" style="text-decoration: none;">Abhisek Upadhyay 2025</a> - All rights
-                    reserved</p>
-            </div>
-        </footer>
-    </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <a href="index.html" class="logo">AU<span>.</span></a>
+      <p>DESIGNED & DEVELOPED BY ABHISEK UPADHYAY</p>
+      <span>© <span id="year"></span> ALL RIGHTS RESERVED.</span>
+    </footer>
 
     <script>
-        const readMoreLinks = document.querySelectorAll('.read-more');
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-        readMoreLinks.forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const fullPost = this.nextElementSibling;
-                fullPost.style.display = fullPost.style.display === 'block' ? 'none' : 'block';
-                this.textContent = fullPost.style.display === 'block' ? 'Read Less' : 'Read More';
-            });
+      document.querySelectorAll(".article-details").forEach((details) => {
+        details.addEventListener("toggle", () => {
+          const label = details.querySelector(".read-label");
+          const icon = details.querySelector(".read-icon");
+
+          label.textContent = details.open
+            ? "CLOSE ARTICLE"
+            : "READ FULL ARTICLE";
+
+          icon.textContent = details.open ? "↙" : "↗";
         });
+      });
     </script>
-</body>
-
+  </body>
 </html>

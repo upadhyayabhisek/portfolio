@@ -1,58 +1,482 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>
+    <meta name="theme-color" content="#171916" />
+    <meta name="description" content="Page not found — Abhisek Upadhyay." />
+
+    <title>404 — Lost in Space | Abhisek Upadhyay</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            text-align: center;
+      .error-page {
+        min-height: 100svh;
+        height: 100svh;
+        display: flex;
+        flex-direction: column;
+        padding: 0 9%;
+        overflow: hidden;
+      }
+
+      /* HEADER */
+
+      .error-navbar {
+        height: 75px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .error-navbar span {
+        font: 10px var(--font-mono);
+        color: var(--muted);
+        letter-spacing: 1px;
+      }
+
+      .error-status {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      /* MAIN */
+
+      .error-main {
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px 0;
+      }
+
+      .error-eyebrow {
+        font: 10px var(--font-mono);
+        color: var(--accent-dark);
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+      }
+
+      /* CONTENT LAYOUT */
+
+      .error-content {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        gap: 35px;
+      }
+
+      /* 404 NUMBER */
+
+      .error-number {
+        font-size: clamp(150px, 25vw, 350px);
+        font-weight: 700;
+        line-height: 0.75;
+        letter-spacing: -0.1em;
+        color: transparent;
+        -webkit-text-stroke: 2px var(--text);
+        user-select: none;
+        margin-left: -15px;
+        white-space: nowrap;
+      }
+
+      .error-number span {
+        color: var(--accent);
+        -webkit-text-stroke: 0;
+      }
+
+      /* RIGHT CONTENT */
+
+      .error-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 35px;
+        padding-top: 10px;
+      }
+
+      /* TERMINAL */
+
+      .error-terminal {
+        width: 260px;
+        max-width: 100%;
+        padding: 20px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .terminal-header {
+        display: flex;
+        gap: 6px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 15px;
+      }
+
+      .terminal-header span {
+        width: 7px;
+        height: 7px;
+        background: var(--muted);
+        border-radius: 50%;
+      }
+
+      .terminal-content {
+        font: 10px var(--font-mono);
+        line-height: 2.1;
+        color: var(--muted);
+      }
+
+      .terminal-content .terminal-green {
+        color: var(--accent);
+      }
+
+      .terminal-content .terminal-command {
+        color: var(--text);
+      }
+
+      /* ERROR MESSAGE */
+
+      .error-message {
+        max-width: 480px;
+      }
+
+      .error-message h1 {
+        font-size: clamp(35px, 4vw, 58px);
+        line-height: 1;
+        letter-spacing: -3px;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      .error-message h1 span {
+        color: var(--accent-dark);
+      }
+
+      .error-message p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.8;
+        max-width: 400px;
+      }
+
+      /* ACTIONS */
+
+      .error-actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-top: 25px;
+      }
+
+      .home-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 20px;
+        padding: 15px 22px;
+        background: var(--accent);
+        color: #171916;
+        font: 11px var(--font-mono);
+        font-weight: 500;
+        letter-spacing: 1px;
+        transition: 0.3s;
+      }
+
+      .home-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .back-button {
+        color: var(--muted);
+        font: 10px var(--font-mono);
+        letter-spacing: 1px;
+        transition: color 0.3s;
+      }
+
+      .back-button:hover {
+        color: var(--accent);
+      }
+
+      /* FOOTER */
+
+      .error-footer {
+        min-height: 65px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid var(--border);
+        gap: 20px;
+      }
+
+      .error-footer span {
+        font: 9px var(--font-mono);
+        color: var(--muted);
+        letter-spacing: 1px;
+      }
+
+      /* MEDIUM SCREENS */
+
+      @media (max-width: 900px) {
+        .error-page {
+          padding: 0 6%;
         }
 
-        h1 {
-            font-size: 80px;
-            font-weight: 600;
-            color: #0a8fff;
-            margin-top: 100px;
+        .error-content {
+          grid-template-columns: 1fr 0.9fr;
+          gap: 20px;
         }
 
-        p {
-            font-size: 20px;
-            color: #bbb;
+        .error-number {
+          font-size: clamp(140px, 24vw, 240px);
         }
 
-        .btn {
-            background-color: #0a8fff;
-            color: #fff;
-            padding: 10px 25px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 20px;
-            text-decoration: none;
-            /* Remove the underline */
-            transition: background-color 0.3s;
+        .error-right {
+          gap: 25px;
         }
 
-        .btn:hover {
-            background-color: #0771e5;
+        .error-message h1 {
+          font-size: 42px;
         }
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 700px) {
+        .error-page {
+          height: auto;
+          min-height: 100svh;
+          padding: 0 6%;
+          overflow: visible;
+        }
+
+        .error-navbar {
+          height: 70px;
+        }
+
+        .error-navbar span {
+          font-size: 8px;
+        }
+
+        .error-main {
+          padding: 45px 0;
+        }
+
+        .error-eyebrow {
+          margin-bottom: 25px;
+        }
+
+        .error-content {
+          grid-template-columns: 1fr;
+          gap: 45px;
+        }
+
+        .error-number {
+          font-size: clamp(130px, 35vw, 220px);
+          margin-left: -8px;
+        }
+
+        .error-right {
+          gap: 35px;
+          padding-top: 0;
+        }
+
+        .error-terminal {
+          width: 100%;
+          max-width: 320px;
+        }
+
+        .error-message h1 {
+          font-size: 43px;
+        }
+
+        .error-message p {
+          font-size: 13px;
+        }
+
+        .error-footer {
+          flex-direction: column;
+          justify-content: center;
+          align-items: start;
+          padding: 20px 0;
+          gap: 12px;
+        }
+      }
+
+      /* SHORT DESKTOP SCREENS */
+
+      @media (min-width: 701px) and (max-height: 700px) {
+        .error-navbar {
+          height: 60px;
+        }
+
+        .error-main {
+          padding: 15px 0;
+        }
+
+        .error-eyebrow {
+          margin-bottom: 15px;
+        }
+
+        .error-number {
+          font-size: clamp(130px, 22vw, 240px);
+        }
+
+        .error-right {
+          gap: 18px;
+        }
+
+        .error-terminal {
+          padding: 14px 18px;
+        }
+
+        .terminal-header {
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+        }
+
+        .error-message h1 {
+          font-size: 38px;
+          margin-bottom: 12px;
+        }
+
+        .error-message p {
+          font-size: 12px;
+          line-height: 1.6;
+        }
+
+        .error-actions {
+          margin-top: 18px;
+        }
+
+        .error-footer {
+          min-height: 55px;
+        }
+      }
+
+      /* ACCESSIBILITY */
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
+    <div class="error-page">
+      <!-- HEADER -->
 
-    <h1>404</h1>
-    <p>Sorry, the page you're looking for doesn't exist.</p>
-    <a href="index.html" class="btn">Go Back Home</a>
+      <header class="error-navbar">
+        <div class="error-status">
+          <span>404 / PAGE NOT FOUND</span>
+        </div>
+      </header>
 
-</body>
+      <!-- MAIN -->
 
+      <main class="error-main">
+        <p class="error-eyebrow">OOPS! SOMETHING WENT OFF TRACK.</p>
+
+        <div class="error-content">
+          <!-- LEFT: 404 NUMBER -->
+
+          <div class="error-number">4<span>0</span>4</div>
+
+          <!-- RIGHT: TERMINAL + MESSAGE -->
+
+          <div class="error-right">
+            <!-- TERMINAL -->
+
+            <div class="error-terminal">
+              <div class="terminal-header">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="terminal-content">
+                <div>
+                  <span class="terminal-green">abhisek@portfolio</span>:~$
+                </div>
+
+                <div class="terminal-command">find_page --current</div>
+
+                <div>Searching...</div>
+
+                <div></div>
+
+                <div class="terminal-green">ERROR 404</div>
+
+                <div>Page not found.</div>
+
+                <div></div>
+
+                <div>
+                  <span class="terminal-green">abhisek@portfolio</span>:~$ _
+                </div>
+              </div>
+            </div>
+
+            <!-- MESSAGE -->
+
+            <div class="error-message">
+              <h1>
+                LOST IN<br />
+                <span>SPACE?</span>
+              </h1>
+
+              <p>
+                Looks like you've wandered into a page that doesn't exist. Maybe
+                the link is broken, or perhaps the page has moved. Either way,
+                let's get you back on track.
+              </p>
+
+              <!-- ACTIONS -->
+
+              <div class="error-actions">
+                <a href="index.html" class="home-button">
+                  BACK TO HOME <span>↗</span>
+                </a>
+
+                <a href="javascript:history.back()" class="back-button">
+                  GO BACK ↙
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- FOOTER -->
+
+      <footer class="error-footer">
+        <span> DESIGNED & DEVELOPED BY ABHISEK UPADHYAY </span>
+
+        <span> © <span id="year"></span> ALL RIGHTS RESERVED. </span>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
