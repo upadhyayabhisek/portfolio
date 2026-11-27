@@ -197,6 +197,7 @@
   font-weight: 600;
   margin-bottom: 13px;
   transition: color 0.3s ease;
+  min-height: 2.3em;
 }
 
 .blog-card:hover h2 {
@@ -210,6 +211,13 @@
   line-height: 1.85;
   color: var(--muted);
   margin-bottom: 20px;
+  /* Limit description length */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* TAGS */

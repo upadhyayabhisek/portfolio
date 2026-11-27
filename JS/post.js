@@ -517,17 +517,87 @@ document.addEventListener("DOMContentLoaded", () => {
     return fragment;
   }
 
+  function renderRichText(parts, target) {
+    let paragraph = createElement("p");
+
+    function finishParagraph() {
+      target.appendChild(paragraph);
+      paragraph = createElement("p");
+    }
+
+    parts.forEach((part) => {
+      const annotations = part.annotations || {};
+      const segments = String(part.text || "").split("\n");
+
+      segments.forEach((segment, index) => {
+        if (segment) {
+          let element = document.createTextNode(segment);
+
+          if (annotations.code) {
+            const code = createElement("code");
+            code.textContent = segment;
+            element = code;
+          } else {
+            if (annotations.bold) {
+              const strong = createElement("strong");
+              strong.appendChild(element);
+              element = strong;
+            }
+
+            if (annotations.italic) {
+              const em = createElement("em");
+              em.appendChild(element);
+              element = em;
+            }
+
+            if (annotations.underline) {
+              const underline = createElement("u");
+              underline.appendChild(element);
+              element = underline;
+            }
+
+            if (annotations.strikethrough) {
+              const strike = createElement("s");
+              strike.appendChild(element);
+              element = strike;
+            }
+          }
+
+          if (part.href) {
+            const link = createElement("a");
+            link.href = part.href;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.appendChild(element);
+            element = link;
+          }
+
+          paragraph.appendChild(element);
+        }
+
+        if (index < segments.length - 1) {
+          finishParagraph();
+        }
+      });
+    });
+
+    if (paragraph.childNodes.length) {
+      target.appendChild(paragraph);
+    }
+  }
+
   function createBody(post) {
     const wrapper = createElement("div", "post-body-wrapper");
-
     const content = createElement("div", "post-content");
-
-    // FULL ARTICLE
-
     const articleBody = createElement("div", "post-content-body");
 
     if (Array.isArray(post.content) && post.content.length > 0) {
       articleBody.appendChild(renderNotionBlocks(post.content));
+    } else if (
+      Array.isArray(post.longDescriptionRichText) &&
+      post.longDescriptionRichText.length > 0
+    ) {
+      renderRichText(post.longDescriptionRichText, articleBody);
     } else {
       const paragraphs = (post.longDescription || "")
         .split(/\n+/)
@@ -544,9 +614,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ARTICLE FOOTER
-
     const footer = createElement("div", "post-footer");
-
     footer.appendChild(createElement("span", "", "END OF ARTICLE."));
 
     content.append(articleBody, footer);

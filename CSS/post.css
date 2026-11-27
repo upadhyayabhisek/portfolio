@@ -323,6 +323,53 @@
   font-size: 17px;
 }
 
+/* NOTION TEXT COLORS */
+
+.post-content-body .notion-color-red {
+  color: #e06c75;
+}
+
+.post-content-body .notion-color-blue {
+  color: #61afef;
+}
+
+.post-content-body .notion-color-green {
+  color: #98c379;
+}
+
+.post-content-body .notion-color-orange {
+  color: #d19a66;
+}
+
+.post-content-body .notion-color-purple {
+  color: #c678dd;
+}
+
+.post-content-body .notion-color-pink {
+  color: #e06c9f;
+}
+
+.post-content-body .notion-color-brown {
+  color: #c19a6b;
+}
+
+.post-content-body .notion-color-gray {
+  color: var(--muted);
+}
+
+.post-content-body strong {
+  font-weight: 700;
+}
+
+.post-content-body u {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.post-content-body s {
+  text-decoration: line-through;
+}
+
 /* CTA */
 
 .post-cta {
