@@ -1159,13 +1159,10 @@ img {
 
 .vinyl-record {
   position: relative;
-
   width: min(78%, 275px);
-
   aspect-ratio: 1;
-
   border-radius: 50%;
-
+  will-change: transform;
   background: repeating-radial-gradient(
     circle,
     #111 0px,
@@ -1301,8 +1298,6 @@ img {
 
   z-index: 4;
 }
-
-/* TONEARM */
 
 /* CONTROLS */
 

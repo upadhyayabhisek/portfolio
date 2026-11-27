@@ -123,10 +123,7 @@ window.addEventListener("load", () => {
   }
 });
 
-// =========================================
-// DJ VINYL INTERACTION
-// =========================================
-
+//  VINYL INTERACTION
 const vinyl = document.getElementById("vinylRecord");
 const recordToggle = document.getElementById("recordToggle");
 const recordStatus = document.getElementById("recordStatus");
@@ -135,7 +132,9 @@ if (vinyl && recordToggle) {
   let isPlaying = true;
   let isScratching = false;
   let lastAngle = 0;
-  let scratchRotation = 0;
+  let currentRotation = 0;
+  let spinAnimation = null;
+  let activePointerId = null;
 
   const getAngle = (event, element) => {
     const rect = element.getBoundingClientRect();
@@ -149,11 +148,72 @@ if (vinyl && recordToggle) {
     );
   };
 
+  // START SPINNING FROM CURRENT POSITION
+
+  const startSpinning = () => {
+    if (spinAnimation) {
+      spinAnimation.cancel();
+      spinAnimation = null;
+    }
+
+    vinyl.style.animation = "none";
+
+    vinyl.style.transform = `rotate(${currentRotation}deg)`;
+
+    if (!isPlaying || isScratching) return;
+
+    spinAnimation = vinyl.animate(
+      [
+        { transform: `rotate(${currentRotation}deg)` },
+        { transform: `rotate(${currentRotation + 360}deg)` },
+      ],
+      {
+        duration: 2200,
+        iterations: Infinity,
+        easing: "linear",
+      },
+    );
+  };
+
+  // STOP AND SAVE CURRENT ROTATION
+
+  const stopSpinning = () => {
+    if (!spinAnimation) return;
+
+    const computed = new DOMMatrixReadOnly(
+      window.getComputedStyle(vinyl).transform,
+    );
+
+    let angle = Math.atan2(computed.b, computed.a) * (180 / Math.PI);
+
+    if (angle < 0) angle += 360;
+
+    // Keep rotation continuous across full revolutions
+    const previousAngle = ((currentRotation % 360) + 360) % 360;
+    let difference = angle - previousAngle;
+
+    if (difference > 180) difference -= 360;
+    if (difference < -180) difference += 360;
+
+    currentRotation += difference;
+
+    spinAnimation.cancel();
+    spinAnimation = null;
+
+    vinyl.style.transform = `rotate(${currentRotation}deg)`;
+  };
+
+  // UPDATE PLAY STATE
+
   const updatePlayState = () => {
     vinyl.classList.toggle("is-playing", isPlaying);
 
     if (recordStatus) {
-      recordStatus.textContent = isPlaying ? "NOW PLAYING" : "PAUSED";
+      recordStatus.textContent = isScratching
+        ? "SCRATCHING"
+        : isPlaying
+          ? "NOW PLAYING"
+          : "PAUSED";
     }
 
     recordToggle.innerHTML = isPlaying
@@ -172,58 +232,80 @@ if (vinyl && recordToggle) {
 
   recordToggle.addEventListener("click", () => {
     isPlaying = !isPlaying;
+
+    if (isPlaying && !isScratching) {
+      startSpinning();
+    } else {
+      stopSpinning();
+    }
+
     updatePlayState();
   });
 
   // VINYL SCRATCHING
 
   vinyl.addEventListener("pointerdown", (event) => {
+    if (isScratching) return;
+
     isScratching = true;
+    activePointerId = event.pointerId;
+
+    stopSpinning();
+
     lastAngle = getAngle(event, vinyl);
 
     vinyl.setPointerCapture(event.pointerId);
-    vinyl.style.animationPlayState = "paused";
     vinyl.style.cursor = "grabbing";
 
-    if (recordStatus) {
-      recordStatus.textContent = "SCRATCHING";
-    }
+    updatePlayState();
   });
 
   vinyl.addEventListener("pointermove", (event) => {
-    if (!isScratching) return;
+    if (!isScratching || event.pointerId !== activePointerId) return;
 
     const currentAngle = getAngle(event, vinyl);
 
     let difference = currentAngle - lastAngle;
 
-    // Prevent sudden rotation jumps across the angle boundary.
     if (difference > 180) difference -= 360;
     if (difference < -180) difference += 360;
 
-    scratchRotation += difference;
+    currentRotation += difference;
     lastAngle = currentAngle;
 
-    vinyl.style.transform = `rotate(${scratchRotation}deg)`;
+    vinyl.style.transform = `rotate(${currentRotation}deg)`;
   });
 
-  const stopScratching = () => {
+  // STOP SCRATCHING
+
+  const stopScratching = (event) => {
     if (!isScratching) return;
 
+    if (
+      event &&
+      activePointerId !== null &&
+      event.pointerId !== activePointerId
+    )
+      return;
+
     isScratching = false;
+    activePointerId = null;
 
     vinyl.style.cursor = "grab";
-    vinyl.style.transform = "";
 
-    vinyl.style.animationPlayState = isPlaying ? "running" : "paused";
-
-    if (recordStatus) {
-      recordStatus.textContent = isPlaying ? "NOW PLAYING" : "PAUSED";
+    if (isPlaying) {
+      startSpinning();
+    } else {
+      vinyl.style.transform = `rotate(${currentRotation}deg)`;
     }
-  };
 
+    updatePlayState();
+  };
   vinyl.addEventListener("pointerup", stopScratching);
   vinyl.addEventListener("pointercancel", stopScratching);
   vinyl.addEventListener("lostpointercapture", stopScratching);
+  vinyl.style.animation = "none";
+  vinyl.style.transform = "rotate(0deg)";
+  startSpinning();
   updatePlayState();
 }
