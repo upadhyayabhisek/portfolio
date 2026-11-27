@@ -1664,3 +1664,9 @@ img {
     visibility: visible !important;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: marquee 38s linear infinite !important;
+  }
+}
