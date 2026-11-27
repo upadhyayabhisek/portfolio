@@ -449,7 +449,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     error.append(createElement("span", "", message));
 
-    const link = createElement("a", "", "← BACK TO JOURNAL");
+    const link = createElement("a", "", "← RETURN BACK");
 
     link.href = "blog.html";
 
