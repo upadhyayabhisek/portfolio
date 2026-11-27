@@ -366,6 +366,157 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ARTICLE BODY
 
+  function renderNotionBlocks(blocks) {
+    const fragment = document.createDocumentFragment();
+
+    if (!Array.isArray(blocks)) return fragment;
+
+    function renderInline(parent, block) {
+      const parts = block.richText;
+
+      if (!Array.isArray(parts) || !parts.length) {
+        parent.textContent = block.text || "";
+        return;
+      }
+
+      parts.forEach((part) => {
+        const annotations = part.annotations || {};
+        let element = document.createTextNode(part.text || "");
+
+        if (annotations.code) {
+          const code = createElement("code");
+          code.textContent = part.text || "";
+          element = code;
+        } else if (annotations.bold) {
+          const strong = createElement("strong");
+          strong.textContent = part.text || "";
+          element = strong;
+        } else if (annotations.italic) {
+          const em = createElement("em");
+          em.textContent = part.text || "";
+          element = em;
+        }
+
+        if (part.href) {
+          const link = createElement("a");
+          link.href = part.href;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.appendChild(element);
+          parent.appendChild(link);
+        } else {
+          parent.appendChild(element);
+        }
+      });
+    }
+
+    function renderBlocks(items, target) {
+      for (let i = 0; i < items.length; i++) {
+        const block = items[i];
+
+        if (!block) continue;
+
+        const text = block.text || "";
+
+        switch (block.type) {
+          case "paragraph": {
+            const p = createElement("p");
+            renderInline(p, block);
+            target.appendChild(p);
+            break;
+          }
+
+          case "heading_1":
+          case "heading_2":
+          case "heading_3": {
+            const level = Number(block.type.slice(-1));
+            const heading = createElement(`h${level}`);
+            renderInline(heading, block);
+            target.appendChild(heading);
+            break;
+          }
+
+          case "quote": {
+            const quote = createElement("blockquote");
+            renderInline(quote, block);
+            target.appendChild(quote);
+            break;
+          }
+
+          case "bulleted_list_item":
+          case "numbered_list_item": {
+            const tag = block.type === "bulleted_list_item" ? "ul" : "ol";
+
+            let list = target.lastElementChild;
+
+            if (!list || list.tagName.toLowerCase() !== tag) {
+              list = createElement(tag);
+              target.appendChild(list);
+            }
+
+            const li = createElement("li");
+            renderInline(li, block);
+            list.appendChild(li);
+            break;
+          }
+
+          case "code": {
+            const pre = createElement("pre");
+            const code = createElement("code");
+
+            code.textContent = text;
+            pre.appendChild(code);
+            target.appendChild(pre);
+            break;
+          }
+
+          case "image": {
+            if (!block.url) break;
+
+            const image = document.createElement("img");
+            image.src = block.url;
+            image.alt = block.caption || "Article image";
+            image.loading = "lazy";
+
+            target.appendChild(image);
+
+            if (block.caption) {
+              const caption = createElement(
+                "p",
+                "image-caption",
+                block.caption,
+              );
+              target.appendChild(caption);
+            }
+            break;
+          }
+
+          case "divider":
+            target.appendChild(createElement("hr"));
+            break;
+
+          case "callout": {
+            const callout = createElement("blockquote");
+            renderInline(callout, block);
+            target.appendChild(callout);
+            break;
+          }
+
+          default:
+            break;
+        }
+
+        if (Array.isArray(block.children) && block.children.length) {
+          renderBlocks(block.children, target);
+        }
+      }
+    }
+
+    renderBlocks(blocks, fragment);
+
+    return fragment;
+  }
+
   function createBody(post) {
     const wrapper = createElement("div", "post-body-wrapper");
 
@@ -375,9 +526,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const articleBody = createElement("div", "post-content-body");
 
-    articleBody.appendChild(
-      renderMarkdown(post.longDescription || "Article content coming soon."),
-    );
+    if (Array.isArray(post.content) && post.content.length > 0) {
+      articleBody.appendChild(renderNotionBlocks(post.content));
+    } else {
+      const paragraphs = (post.longDescription || "")
+        .split(/\n+/)
+        .map((text) => text.trim())
+        .filter(Boolean);
+
+      if (paragraphs.length) {
+        paragraphs.forEach((text) => {
+          articleBody.appendChild(createElement("p", "", text));
+        });
+      } else {
+        articleBody.textContent = "Article content coming soon.";
+      }
+    }
 
     // ARTICLE FOOTER
 
@@ -462,7 +626,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function fetchPost() {
     const params = new URLSearchParams(window.location.search);
-
     const slug = params.get("slug");
 
     if (!slug) {
@@ -471,29 +634,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const response = await fetch(API_URL);
+      const response = await fetch(`${API_URL}/${encodeURIComponent(slug)}`);
 
       if (!response.ok) {
-        throw new Error("Unable to fetch articles.");
+        if (response.status === 404) {
+          showError("ARTICLE NOT FOUND.");
+          return;
+        }
+
+        throw new Error("Unable to fetch article.");
       }
 
       const data = await response.json();
 
-      if (!data.success || !Array.isArray(data.posts)) {
-        throw new Error("Invalid API response.");
+      if (!data.success || !data.post) {
+        throw new Error("Invalid article response.");
       }
 
-      const post = data.posts.find((item) => item.slug === slug);
-
-      if (!post) {
-        showError("ARTICLE NOT FOUND.");
-        return;
-      }
-
-      renderPost(post);
+      renderPost(data.post);
     } catch (error) {
       console.error("Article API Error:", error);
-
       showError("UNABLE TO LOAD ARTICLE. PLEASE TRY AGAIN LATER.");
     }
   }
