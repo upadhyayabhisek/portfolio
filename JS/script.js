@@ -1,20 +1,15 @@
-// =========================================
-// MAIN JAVASCRIPT
-// =========================================
-
-// ICONS
 lucide.createIcons();
 
+// THEME SWITCHER
 // THEME SWITCHER
 
 const themeToggle = document.getElementById("themeToggle");
 const root = document.documentElement;
 
-const savedTheme = localStorage.getItem("portfolio-theme");
+// LOAD SAVED THEME
+const savedTheme = localStorage.getItem("theme") || "dark";
 
-if (savedTheme) {
-  root.setAttribute("data-theme", savedTheme);
-}
+root.setAttribute("data-theme", savedTheme);
 
 function updateThemeIcon() {
   if (!themeToggle) return;
@@ -31,14 +26,19 @@ function updateThemeIcon() {
 
 updateThemeIcon();
 
+// TOGGLE THEME
 themeToggle?.addEventListener("click", () => {
   const currentTheme = root.getAttribute("data-theme");
+
   const newTheme = currentTheme === "dark" ? "light" : "dark";
 
   root.setAttribute("data-theme", newTheme);
-  localStorage.setItem("portfolio-theme", newTheme);
+
+  localStorage.setItem("theme", newTheme);
 
   updateThemeIcon();
+
+  console.log("Theme saved:", localStorage.getItem("theme"));
 });
 
 // MOBILE MENU

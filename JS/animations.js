@@ -1,7 +1,3 @@
-// =========================================
-// GSAP SMOOTH ANIMATIONS
-// =========================================
-
 if (window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
 
