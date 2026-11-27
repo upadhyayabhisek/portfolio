@@ -26,7 +26,7 @@
         </h2>
 
         <p class="ai-game-subtitle">
-          YOUR JOB IS AT STAKE. KEEP RUNNING.
+          KEEP RUNNING.
         </p>
 
         <div class="ai-game-stats">
@@ -57,7 +57,7 @@
 
       <div class="ai-game-footer">
         <span>SPACE / CLICK / TAP TO JUMP</span>
-        <span>HUMANS VS MACHINES © 2026</span>
+        <span>AU. © 2026</span>
       </div>
 
     </div>
@@ -740,8 +740,7 @@
 
     overlay.classList.remove("game-over");
 
-    statusElement.innerHTML =
-      "<span>RUN, DEVELOPER, RUN!</span> The AI is getting closer.";
+    statusElement.innerHTML = "<span>RUN!</span> Save your job.";
 
     startButton.textContent = "RESTART GAME →";
 
@@ -782,7 +781,7 @@
         "HUMAN <span>SUPREMACY.</span>";
     } else {
       statusElement.innerHTML =
-        "<span>AI TAKEOVER COMPLETE.</span> Your position has been automated.";
+        "<span>AI TAKEOVER.</span> Your position has been automated.";
 
       overlay.querySelector(".ai-game-title").innerHTML =
         "YOU GOT <span>REPLACED.</span>";
@@ -903,7 +902,7 @@
       "RUN FROM <span>AI.</span>";
 
     statusElement.innerHTML =
-      "<span>SECRET MODE ACTIVATED.</span> Your job is on the line.";
+      "<span>GAME MODE ACTIVATED.</span> Your job is on the line.";
 
     render();
   }
